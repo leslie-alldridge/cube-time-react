@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <style>
+         #randomstate { visibility: hidden; }
+      </style>
+      <link rel="stylesheet" type="text/css" href="/styles/styles.css"/>
+      <link rel="stylesheet" type="text/css" href="/styles/reset.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Orbitron:700,900" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet"> 
+      <title>Cube Scramble and Timer</title>
+   </head>
+   <body>
+      <div id="scrambler" class="split right">
+         <div class="centered">
+            <p id="status"></p>
+            <p id="randomstate">
+                
+               <span class="result"></span>
+               <br>
+               
+               <button>Generate random scramble</button><br/>
+               
+               <a id = "clear" href = "#">Clear Times</a><br/>
+               <a id = "export" href = "#">Export Times</a>
+            </p>
+            
+         </div>
+      </div>
+      <div id="container" class="split left">
+         <div class="centered">
+             <div class="content" ontouchstart="run()">
+            <p id="timerHead">Time your solve</p>
+            <div id = "scram"></div>
+            <div id="timeOut"><span id="min"></span><span id="colon"></span><span id="sec">0</span>.<span id="decimal">00</span></div>
+            <div id = "timeList"></div>
+            <div id = "stats">
+               <span id = "solveNum">Solves: 0</span> <br/>
+               <span id = "overallAv">Average: </span><br/>
+               <span id = "fastest">Best: </span>
+            </div>
+         </div>
+         </div>
+      </div>
+     
+        
+   
+      
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.slim.js"
+         integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+         crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/scripts/timer.js"></script>
+      <script type="text/javascript" src="/scripts/cube.js"></script>
+      <script type="text/javascript" src="/scripts/async.js"></script>
+      <script type="text/javascript" src="/scripts/main.js"></script>
+   </body>
+</html>
