@@ -1,6 +1,8 @@
 const express = require('express')
-
+const moment = require('moment')
 const db = require('../db')
+
+//flash notifications
 
 const router = express.Router()
 
@@ -9,23 +11,17 @@ router.get('/', (req, res) => {
 })
 
 router.post('/times', (req, res) => {
-  //console.log(req.body)
-  //need to do key value pairs and submit times as individual lines
   let receivedTime = req.body.times;
-  let date = new Date().toISOString().split('T')[0];
-  console.log(date);
+
+  let currentDate = moment().format('ll');
   
-
-
-  console.log(receivedTime);
   let array = receivedTime.split(',');
   
   for (let i = 0; i < array.length; i++){
-    db.saveTimes(Number(array[i]), date).then((data) => {
+    db.saveTimes(Number(array[i]), currentDate).then((data) => {
     })
   }
-    //console.log(data);
-      res.send('you hit post')
+      res.redirect('/')
   })
 
 
