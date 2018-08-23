@@ -15,6 +15,10 @@ router.get('/times', (req, res) => {
   res.redirect('/');
 })
 
+router.get('/stats', (req, res) => {
+  res.render('stats')
+})
+
 router.post('/times', (req, res) => {
   let receivedTime = req.body.times;
 
