@@ -19,13 +19,18 @@ router.post('/times', (req, res) => {
   //need to do key value pairs and submit times as individual lines
   let receivedTime = req.body.times;
   console.log(receivedTime);
+  let array = receivedTime.split(',');
   
-  db.saveTimes(receivedTime).then((data) => {
+  for (let i = 0; i < array.length; i++){
+    db.saveTimes(Number(array[i])).then((data) => {
+    })
+  }
+  
     //console.log(data);
-    
-    
+      res.send('you hit post')
+
+
   })
-  res.send('you hit post')
-})
+
 
 module.exports = router
