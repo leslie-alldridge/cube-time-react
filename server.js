@@ -2,10 +2,15 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const path = require('path')
 const userRoutes = require('./routes/users')
+//flash 
 
+//end
 const server = express()
 
 // Middleware
+//flash
+
+//end
 
 server.engine('hbs', hbs({extname: 'hbs'}))
 server.set('view engine', 'hbs')

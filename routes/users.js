@@ -4,10 +4,15 @@ const db = require('../db')
 
 //flash notifications
 
+
 const router = express.Router()
 
 router.get('/', (req, res) => {
   res.render('index')
+})
+
+router.get('/times', (req, res) => {
+  res.redirect('/');
 })
 
 router.post('/times', (req, res) => {
@@ -21,7 +26,7 @@ router.post('/times', (req, res) => {
     db.saveTimes(Number(array[i]), currentDate).then((data) => {
     })
   }
-      res.redirect('/')
+      res.render('index', {success: true})
   })
 
 
