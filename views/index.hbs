@@ -26,6 +26,11 @@
                
                <a id = "clear" href = "#">Clear Times</a><br/>
                <a id = "export" href = "#">Export Times</a>
+               {{!-- hidden form for post request --}}
+               <form action="/times" method="POST">
+                    <input id="userTimes" name="times"type="text"> 
+                    <input id="saveTimesBtn" type="submit" value="Save Times" />
+                </form>
             </p>
             
          </div>
@@ -57,5 +62,6 @@
       <script type="text/javascript" src="/scripts/cube.js"></script>
       <script type="text/javascript" src="/scripts/async.js"></script>
       <script type="text/javascript" src="/scripts/main.js"></script>
+      {{!-- <script type="text/javascript" src="/scripts/data.js"></script> --}}
    </body>
 </html>

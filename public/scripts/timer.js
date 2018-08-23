@@ -11,6 +11,7 @@ var minOut = document.getElementById("min");
 var colon = document.getElementById("colon");
 var timesOut = document.getElementById("timeOut");
 var timesList = document.getElementById("timeList");
+
 var clearAll = document.getElementById("clear");
 var timerHead = document.getElementById("timerHead");
 var timesDisplay = new Array();
@@ -23,7 +24,7 @@ var worst = 0;
 var numSolves = 0;
 var total = 0;
 var numSolvesOut = document.getElementById("solveNum");
-
+let userTimesVal = document.getElementById('userTimes');
 
 function timer() {
   decimal++;
@@ -62,6 +63,7 @@ document.body.onkeyup = function(e){
 
 function run() {
   if (!running) {
+    //timer going
     decimal = 0;
     sec = 0;
     min = 0;
@@ -75,15 +77,24 @@ function run() {
     scramble = "";
     interval = setInterval(timer, 10);
   } else if (running) {
+    //timer stopped
     running = false;
     bgColor.style.backgroundImage = '';
     bgColor.style.backgroundColor = "rgba(255,0,0,0.6)";
+    // timesOut.innerText += ","
+    
 
     clearInterval(interval);
     timesDisplay.push(" " + timesOut.innerHTML);
+
     csTimes.push(cs);
     timesList.innerHTML = timesDisplay;
     calculateStats();
+    let timesListText = document.getElementById("timeList").innerText;
+    console.log(timesListText);
+    
+    userTimesVal.value = timesListText //takes current solves and sends to form for db post
+
   }
 }
 
