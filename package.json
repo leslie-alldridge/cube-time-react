@@ -20,10 +20,14 @@
   },
   "homepage": "https://github.com/dev-academy-challenges/boilerplate-knex#readme",
   "dependencies": {
+    "chart.js": "^2.7.2",
     "cubejs": "^1.1.0",
     "express": "^4.16.3",
+    "express-flash-notification": "^0.5.0",
     "express-handlebars": "^3.0.0",
     "knex": "^0.15.2",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
     "nodemon": "^1.18.3",
     "sqlite3": "^4.0.2"
   },

@@ -2,12 +2,17 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const path = require('path')
 const userRoutes = require('./routes/users')
+//flash 
 
+//end
 const server = express()
 
 // Middleware
+//flash
 
-server.engine('hbs', hbs({extname: 'hbs'}))
+//end
+
+server.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}))
 server.set('view engine', 'hbs')
 server.use(express.urlencoded({extended: true}))
 

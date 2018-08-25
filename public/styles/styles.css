@@ -109,6 +109,21 @@
     }
 }
 
-#userTimes {
+#userTimes, #userBest, #userAverage {
   display: none;
+}
+
+#timesSent {
+  display: none;
+}
+
+#solveDates {
+  display: none;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 80vh;
+  width: 80vw;
 }
