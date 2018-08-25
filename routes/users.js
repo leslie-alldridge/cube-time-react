@@ -16,7 +16,11 @@ router.get('/times', (req, res) => {
 })
 
 router.get('/stats', (req, res) => {
-  res.render('stats')
+  db.getDates().then((data) => {
+    console.log(data);
+    
+    res.render('stats', {data})
+  })
 })
 
 router.post('/times', (req, res) => {

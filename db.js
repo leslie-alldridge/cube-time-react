@@ -7,6 +7,12 @@ function saveTimes(time, now, testConn) {
   return conn('times').insert({'date': now, 'solve': time})
 }
 
+function getDates(testConn){
+  const conn = testConn || connection
+  return conn('times').select()
+}
+
 module.exports = {
-  saveTimes
+  saveTimes,
+  getDates
 }
