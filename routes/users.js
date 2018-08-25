@@ -26,7 +26,7 @@ router.get('/stats', (req, res) => {
 router.post('/times', (req, res) => {
   let receivedTime = req.body.times;
 
-  let currentDate = moment().format('ll');
+  let currentDate = moment().format('MMM Do');
   
   let array = receivedTime.split(',');
   

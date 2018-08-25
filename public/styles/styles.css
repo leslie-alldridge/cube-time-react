@@ -112,3 +112,11 @@
 #userTimes {
   display: none;
 }
+
+#timesSent {
+  display: none;
+}
+
+#solveDates {
+  display: none;
+}

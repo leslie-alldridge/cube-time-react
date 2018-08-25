@@ -1,7 +1,6 @@
 
-<p>Welcome to stats</p>
-
-<p>d3 or charts.js chart goes here</p>
+<h1>Welcome to stats</h1>
+<h3>Viewing: Lifetime Solves</h3>
 
 <a href="/">Back to solving</a>
 <div id="timesSent">
@@ -9,7 +8,11 @@
     {{solve}},
 {{/each }}
 </div>
-
+<div id="solveDates">
+{{#each data}}
+    {{date}},
+{{/each }}
+</div>
 
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
@@ -21,13 +24,33 @@ let array = [];
  return parseFloat(item, 10);
 });
 
-console.log(array)
+let dates = document.getElementById('solveDates').innerText
+let dateArray = [];
+dateArray = dates.split(',').map(function(item) { 
+ return item;
+});
+
+
+//function onlyUnique(value, index, self) { 
+   // return self.indexOf(value) === index;
+//}
+
+//dateArray = dateArray.filter(onlyUnique);
+
+
+
+//console.log(dateArray)
+
+
+
+
+//console.log(array)
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: ["20/8", "21/8", "22/8", "23/8", "24/8", "25/8"],
+        labels: dateArray,
         datasets: [{
-            label: 'Recent Solves',
+            label: 'Lifetime Solves',
             data: array,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
