@@ -10,6 +10,7 @@ var secOut = document.getElementById("sec");
 var minOut = document.getElementById("min");
 var colon = document.getElementById("colon");
 var timesOut = document.getElementById("timeOut");
+
 var timesList = document.getElementById("timeList");
 
 var clearAll = document.getElementById("clear");
@@ -23,8 +24,12 @@ var bestOut = document.getElementById("fastest");
 var worst = 0;
 var numSolves = 0;
 var total = 0;
+
 var numSolvesOut = document.getElementById("solveNum");
 let userTimesVal = document.getElementById('userTimes');
+let userBest = document.getElementById('userBest');
+let userAverage = document.getElementById('userAverage');
+
 
 function timer() {
   decimal++;
@@ -58,7 +63,7 @@ document.body.onkeyup = function(e){
         run();
     }
 }
-//start on touch
+
 
 
 function run() {
@@ -91,6 +96,7 @@ function run() {
     timesList.innerHTML = timesDisplay;
     calculateStats();
     let timesListText = document.getElementById("timeList").innerText;
+    
     console.log(timesListText);
     
     userTimesVal.value = timesListText //takes current solves and sends to form for db post
@@ -131,7 +137,11 @@ function calculateStats() {
   }
   avAll = total / numSolves;
   avAllOut.innerHTML = "Average: " + formatTime(avAll);
+  //average^^
+  userAverage.value = formatTime(avAll);
   bestOut.innerHTML = "Best: " + formatTime(best);
+  //best^^
+  userBest.value = formatTime(best);
 }
 
 function formatTime(t) {

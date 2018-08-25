@@ -24,18 +24,25 @@ router.get('/stats', (req, res) => {
 })
 
 router.post('/times', (req, res) => {
-  let receivedTime = req.body.times;
-
+  console.log(req.body);
   let currentDate = moment().format('MMM Do');
+  let receivedTime = req.body.times;
+  let receivedAverage = req.body.average;
+  let receivedBest = req.body.best;
+
+  //save best and av to db
+  db.saveBest(Number(receivedBest), currentDate).then((average) => {
+    db.saveAverage(Number(receivedAverage), currentDate).then((best) => {
+      let array = receivedTime.split(',');
   
-  let array = receivedTime.split(',');
-  
-  for (let i = 0; i < array.length; i++){
-    db.saveTimes(Number(array[i]), currentDate).then((data) => {
+      for (let i = 0; i < array.length; i++){
+        db.saveTimes(Number(array[i]), currentDate).then((data) => {
+        })
+      }
+          res.render('index', {success: true})
     })
-  }
-      res.render('index', {success: true})
   })
+})
 
   router.post('/stats/', (req, res) => {
     console.log(req.body);
@@ -54,16 +61,16 @@ router.post('/times', (req, res) => {
   })
 
   router.get('/stats/2', (req, res) => {
-    db.getDates().then((data) => {
-      //console.log(data);
+    db.getAverages().then((data) => {
+      console.log(data);
       
       res.render('stats2', {data})
     })
   })
 
   router.get('/stats/3', (req, res) => {
-    db.getDates().then((data) => {
-      //console.log(data);
+    db.getBests().then((data) => {
+      console.log(data);
       
       res.render('stats3', {data})
     })

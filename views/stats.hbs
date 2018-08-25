@@ -3,7 +3,7 @@
 <h3>Viewing: </h3>
 <form action="/stats/" method="POST">
 <select name="request">
-  <option value="1" name="name">Lifetime</option>
+  <option selected value="1" name="name">Lifetime</option>
   <option value="2" name="name">Average</option>
   <option value="3" name="name">Best</option>
 </select>
@@ -21,12 +21,14 @@
     {{date}},
 {{/each }}
 </div>
-
-<canvas id="myChart" width="400" height="400"></canvas>
+<div class="chart-container">
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div>
 <script>
 let times = document.getElementById('timesSent').innerText
 //console.log(times)
 var ctx = document.getElementById("myChart");
+
 let array = [];
  array = times.split(',').map(function(item) { 
  return parseFloat(item, 10);
@@ -61,12 +63,12 @@ var myChart = new Chart(ctx, {
             label: 'Lifetime Solves',
             data: array,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.35)',
+                'rgba(54, 162, 235, 0.35)',
+                'rgba(255, 206, 86, 0.35)',
+                'rgba(75, 192, 192, 0.35)',
+                'rgba(153, 102, 255, 0.35)',
+                'rgba(255, 159, 64, 0.35)'
             ],
             borderColor: [
                 'rgba(255,99,132,1)',
@@ -80,6 +82,7 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
+        maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 ticks: {

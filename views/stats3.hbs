@@ -1,0 +1,90 @@
+
+<h1>Welcome to stats</h1>
+<h3>Viewing: </h3>
+<form action="/stats/" method="POST">
+<select name="request">
+  <option value="1" name="name">Lifetime</option>
+  <option value="2" name="name">Average</option>
+  <option  selected value="3" name="name">Best</option>
+</select>
+<input id="submit" type="submit" value="Let's go!" />
+</form>
+<p></p>
+<a href="/">Back to solving</a>
+<div id="timesSent">
+{{#each data}}
+    {{best}},
+{{/each }}
+</div>
+<div id="solveDates">
+{{#each data}}
+    {{date}},
+{{/each }}
+</div>
+
+<div class="chart-container"><canvas id="myChart" width="400" height="400"></canvas></div>
+<script>
+let times = document.getElementById('timesSent').innerText
+//console.log(times)
+var ctx = document.getElementById("myChart");
+let array = [];
+ array = times.split(',').map(function(item) { 
+ return parseFloat(item, 10);
+});
+
+let dates = document.getElementById('solveDates').innerText
+let dateArray = [];
+dateArray = dates.split(',').map(function(item) { 
+ return item;
+});
+
+
+//function onlyUnique(value, index, self) { 
+   // return self.indexOf(value) === index;
+//}
+
+//dateArray = dateArray.filter(onlyUnique);
+
+
+
+//console.log(dateArray)
+
+
+
+
+//console.log(array)
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: dateArray,
+        datasets: [{
+            label: 'Session Bests',
+            data: array,
+            backgroundColor: [
+                'rgba(29, 135, 240, 0.45)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+                maintainAspectRatio: false,
+
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
