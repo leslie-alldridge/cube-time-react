@@ -17,7 +17,7 @@ router.get('/times', (req, res) => {
 
 router.get('/stats', (req, res) => {
   db.getDates().then((data) => {
-    console.log(data);
+    //console.log(data);
     
     res.render('stats', {data})
   })
@@ -37,5 +37,36 @@ router.post('/times', (req, res) => {
       res.render('index', {success: true})
   })
 
+  router.post('/stats/', (req, res) => {
+    console.log(req.body);
+    let request = req.body.request
+    switch (request){
+      case '1':
+        res.redirect('/stats')
+      break;
+      case '2':
+        res.redirect('/stats/2')
+      break;
+      case '3':
+        res.redirect('/stats/3')
+      break;
+    }
+  })
+
+  router.get('/stats/2', (req, res) => {
+    db.getDates().then((data) => {
+      //console.log(data);
+      
+      res.render('stats2', {data})
+    })
+  })
+
+  router.get('/stats/3', (req, res) => {
+    db.getDates().then((data) => {
+      //console.log(data);
+      
+      res.render('stats3', {data})
+    })
+  })
 
 module.exports = router
