@@ -124,6 +124,17 @@
 .chart-container {
   position: relative;
   margin: auto;
-  height: 80vh;
+  height: 70vh;
   width: 80vw;
+}
+
+.text-center {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 15px;
+}
+
+#cubeimg {
+  max-width: 30px;
+  max-width: 30px;
+  margin-right: 10px;
 }

@@ -1,0 +1,109 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/stats">Help || </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/stats">Lifetime Solves </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/stats/2">Session Averages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/stats/3">Session Bests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/help">Help<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<h3 class="text-center"><img id="cubeimg" src="/styles/cube.png"/>Currently Viewing: Help</h3>
+
+<p class="text-center">
+<a href="/"><i class="fas fa-arrow-left"></i>
+
+Back to solving</a>
+</p>
+
+
+<div class="container">
+    <br />
+    <br />
+    <br />
+
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <strong>This page contains a FAQ section below.</strong> If your question isn't answered, please contact the site host by emailing us directly - leslie.alldridge@gmail.com. 
+    </div>
+
+    <br />
+
+    <div class="" id="accordion">
+        <div class="faqHeader">Frequently Asked Questions</div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Will you allow for user login / other users?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="card-block">
+                    At the moment this website is only intended for private use. The sole purpose is not to compete with other solutions, but to reassure myself that I can build 
+                    anything I put my mind to. 
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Can I use this on mobile devices?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="card-block">
+                    Yes, this site was built using mobile first design. This has been tested on a myriad of devices but if you're having trouble viewing certain areas, please get in touch. 
+                </div>
+            </div>
+        </div>
+        <div class="card lastCard ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">What did you learn building this site?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="card-block">
+                    Personally, this website connected all the pieces together in my mind. I could draw graphs, render HBS templates, route pages, query databases, but putting everything together was a true challenge. 
+                    I'm happy that I've now been able to see how all these pieces interact with each other. Going forward, I can be more confident in my skills to build a full-stack web application. 
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+    .card {
+        margin-top: 10px;
+    }
+
+    .lastCard {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .card-block {
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    
+</style>

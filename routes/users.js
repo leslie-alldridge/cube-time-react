@@ -23,6 +23,10 @@ router.get('/stats', (req, res) => {
   })
 })
 
+router.get('/help', (req, res) => {
+  res.render('help')
+})
+
 router.post('/times', (req, res) => {
   console.log(req.body);
   let currentDate = moment().format('MMM Do');

@@ -1,16 +1,34 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/stats">Statistics || </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<h1>Welcome to stats</h1>
-<h3>Viewing: </h3>
-<form action="/stats/" method="POST">
-<select name="request">
-  <option value="1" name="name">Lifetime</option>
-  <option selected value="2" name="name">Average</option>
-  <option value="3" name="name">Best</option>
-</select>
-<input id="submit" type="submit" value="Let's go!" />
-</form>
-<p></p>
-<a href="/">Back to solving</a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/stats">Lifetime Solves </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/stats/2">Session Averages <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/stats/3">Session Bests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/stats/3">Help</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<h3 class="text-center"><img id="cubeimg" src="/styles/cube.png"/>Currently Viewing: Session Averages</h3>
+
+<p class="text-center">
+<a href="/"><i class="fas fa-arrow-left"></i>
+
+Back to solving</a>
+</p>
 <div id="timesSent">
 {{#each data}}
     {{average}},
@@ -25,7 +43,7 @@
 </div>
 <script>
 let times = document.getElementById('timesSent').innerText
-//console.log(times)
+
 var ctx = document.getElementById("myChart");
 let array = [];
  array = times.split(',').map(function(item) { 
@@ -38,21 +56,6 @@ dateArray = dates.split(',').map(function(item) {
  return item;
 });
 
-
-//function onlyUnique(value, index, self) { 
-   // return self.indexOf(value) === index;
-//}
-
-//dateArray = dateArray.filter(onlyUnique);
-
-
-
-//console.log(dateArray)
-
-
-
-
-//console.log(array)
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
