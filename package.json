@@ -29,6 +29,7 @@
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.21",
     "nodemon": "^1.18.3",
+    "pg": "^7.4.3",
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {
