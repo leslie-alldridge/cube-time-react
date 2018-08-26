@@ -167,6 +167,11 @@
     .saved {
       font-size: 1.2em;
     }
+
+    #myChart {
+      max-height: 60vh;
+      max-width: 80vw;
+    }
 }
 
 #userTimes, #userBest, #userAverage {
