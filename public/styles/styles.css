@@ -46,7 +46,7 @@
 
   #stats {
     font-family: 'Raleway', sans-serif;
-    margin-top: 50px;
+
   }
 
   #solveNum {
@@ -84,6 +84,10 @@
       text-align:center;
     }
 
+    #randomstate {
+      margin-bottom: 0px;
+    }
+
     #container {
     position: absolute;
     height: 50%;
@@ -106,6 +110,62 @@
     .split {
       padding-top: 0px;
      
+    }
+
+    #timerHead {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2em;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    #timeOut {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    #statsButton {
+      margin-top: 2px;
+      padding-top: 2px;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.5em;
+      width: 100%;
+    }
+
+    .centered {
+      margin-top: 10px;
+      width: 70%;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    div.row {
+      margin-top:2px;
+      padding-top: 2px;
+      margin-bottom:2px;
+      padding-bottom: 2px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .text-center {
+      font-size: 1.5em;
+    }
+
+    .saved {
+      font-size: 1.2em;
     }
 }
 
@@ -137,4 +197,43 @@
   max-width: 30px;
   max-width: 30px;
   margin-right: 10px;
+}
+
+#generate {
+
+  display: inline-block;
+}
+
+.result {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+}
+
+.saved {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  color: rgb(41, 150, 41);
+}
+
+
+span {
+  color: white
+}
+
+.result {
+  color: black;
+}
+
+#statsButton {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+div.row {
+  margin-top: 10px;
+}
+
+#formy {
+  margin-top: 10px;
+  width: 100%;
 }

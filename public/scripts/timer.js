@@ -30,6 +30,7 @@ let userTimesVal = document.getElementById('userTimes');
 let userBest = document.getElementById('userBest');
 let userAverage = document.getElementById('userAverage');
 
+let savedMsg = document.getElementById('saved');
 
 function timer() {
   decimal++;
@@ -69,6 +70,7 @@ document.body.onkeyup = function(e){
 function run() {
   if (!running) {
     //timer going
+    savedMsg.innerText = '';
     decimal = 0;
     sec = 0;
     min = 0;
@@ -107,10 +109,14 @@ function run() {
 clearAll.onclick = clearTimes;
 
 function clearTimes() {
+  bgColor.style.backgroundColor = "rgba(97,95,95)";
   numSolves = 0;
   numSolvesOut.innerHTML = "Solves: " + numSolves;
   best = 99999999999;
   bestOut.innerHTML = "Best: ";
+  secOut.innerHTML = 0;
+  decimalOut.innerHTML = 00;
+  timerHead.innerHTML = 'Time your solve';
   worst = 0;
   avAll = 0;
   total = 0;
