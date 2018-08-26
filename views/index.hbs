@@ -7,13 +7,13 @@
         <br>
         <div class="row">
            
-        <button id="generate button" class="btn btn-primary btn-block"><span>New Scramble</span></button>
+        <button id="generate button" class="btn btn-primary btn-block clicker"><span>New Scramble</span></button>
         <button id="clear" class="btn btn-primary btn-block" ><a id = "clear" href = "#"><span>Clear Times</span></a></button>
 </div>
 
 
  <div class="row" style="margin-bottom: 10px;">
-        <button id="statsButton button" class="btn btn-primary btn-block"><a id = "statsButton" href = "/stats"><span>Stats</span></a></button>
+        <button onclick="location.href='/stats';" id="statsButton button" class="btn btn-primary btn-block"><a id = "statsButton" href = "/stats"><span>Stats Centre</span></a></button>
         {{!-- hidden form for post request --}}
         <form id="formy" action="/times" method="POST">
             <input id="userTimes" name="times"type="text"> 

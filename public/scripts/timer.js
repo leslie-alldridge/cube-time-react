@@ -70,7 +70,11 @@ document.body.onkeyup = function(e){
 function run() {
   if (!running) {
     //timer going
-    savedMsg.innerText = '';
+    try {savedMsg.innerHTML = '';}
+    catch(error){
+      console.log(error);
+      
+    }
     decimal = 0;
     sec = 0;
     min = 0;

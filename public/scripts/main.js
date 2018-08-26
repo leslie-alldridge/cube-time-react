@@ -20,7 +20,7 @@
         // Show the scrambler
         $('#randomstate').css('visibility', 'visible');
         generateScramble();
-        $('#randomstate button').on('click', generateScramble);
+        $('.clicker').on('click', generateScramble);
         $(document).keyup(function(event) {
             if (event.which === 32) {
                 event.preventDefault();
