@@ -173,6 +173,23 @@
   display: none;
 }
 
+#overallAv {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+#fastest {
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+#solveNum {
+  margin-bottom: 10px;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
 #timesSent {
   display: none;
 }
@@ -206,12 +223,12 @@
 
 .result {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .saved {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   color: rgb(41, 150, 41);
 }
 
