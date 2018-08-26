@@ -1,9 +1,6 @@
 const express = require('express')
-const moment = require('moment')
-const db = require('../db')
-
-//flash notifications
-
+let moment = require('moment-timezone');
+const db = require('../db');
 
 const router = express.Router()
 
@@ -17,8 +14,6 @@ router.get('/times', (req, res) => {
 
 router.get('/stats', (req, res) => {
   db.getDates().then((data) => {
-    //console.log(data);
-    
     res.render('stats', {data})
   })
 })
@@ -28,8 +23,7 @@ router.get('/help', (req, res) => {
 })
 
 router.post('/times', (req, res) => {
-  console.log(req.body);
-  let currentDate = moment().format('MMM Do');
+  let currentDate = moment().tz('Pacific/Auckland').format('MMM Do');
   let receivedTime = req.body.times;
   let receivedAverage = req.body.average;
   let receivedBest = req.body.best;
@@ -49,7 +43,7 @@ router.post('/times', (req, res) => {
 })
 
   router.post('/stats/', (req, res) => {
-    console.log(req.body);
+   
     let request = req.body.request
     switch (request){
       case '1':
@@ -66,7 +60,7 @@ router.post('/times', (req, res) => {
 
   router.get('/stats/2', (req, res) => {
     db.getAverages().then((data) => {
-      console.log(data);
+     
       
       res.render('stats2', {data})
     })
@@ -74,7 +68,7 @@ router.post('/times', (req, res) => {
 
   router.get('/stats/3', (req, res) => {
     db.getBests().then((data) => {
-      console.log(data);
+      
       
       res.render('stats3', {data})
     })
